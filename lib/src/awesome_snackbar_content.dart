@@ -38,6 +38,8 @@ class AwesomeSnackbarContent extends StatelessWidget {
   /// if you want to customize the font style of the message
   final TextStyle? messageTextStyle;
   final bool showBubbles;
+  final double? height;
+  final int maxLines;
 
   const AwesomeSnackbarContent({
     super.key,
@@ -49,6 +51,8 @@ class AwesomeSnackbarContent extends StatelessWidget {
     required this.contentType,
     this.inMaterialBanner = false,
     this.showBubbles = true,
+    this.height,
+    this.maxLines,
   });
 
   @override
@@ -83,7 +87,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
       margin: EdgeInsets.symmetric(
         horizontal: horizontalPadding,
       ),
-      height: isMobile ? 100 : 130,
+      height: height ?? (isMobile ? 100 : 130),
       child: Stack(
         clipBehavior: Clip.none,
         alignment: Alignment.topCenter,
@@ -215,7 +219,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
                           fontSize: isMobile ? 14 : 16,
                           color: Colors.white,
                         ),
-                    maxLines: isMobile ? 2 : 3,
+                    maxLines: maxLines??(isMobile ? 2 : 3),
                     softWrap: true,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -258,3 +262,4 @@ class AwesomeSnackbarContent extends StatelessWidget {
     ui.BlendMode colorBlendMode,
   ) => color == null ? null : ui.ColorFilter.mode(color, colorBlendMode);
 }
+
