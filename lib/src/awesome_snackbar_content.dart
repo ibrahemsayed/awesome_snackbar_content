@@ -39,7 +39,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
   final TextStyle? messageTextStyle;
   final bool showBubbles;
   final double? height;
-  final int maxLines;
+  final int? maxLines;
 
   const AwesomeSnackbarContent({
     super.key,
@@ -262,4 +262,5 @@ class AwesomeSnackbarContent extends StatelessWidget {
     ui.BlendMode colorBlendMode,
   ) => color == null ? null : ui.ColorFilter.mode(color, colorBlendMode);
 }
+
 
