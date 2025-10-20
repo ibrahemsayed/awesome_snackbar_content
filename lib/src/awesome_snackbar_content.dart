@@ -37,6 +37,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
 
   /// if you want to customize the font style of the message
   final TextStyle? messageTextStyle;
+  final bool showBubbles;
 
   const AwesomeSnackbarContent({
     super.key,
@@ -47,6 +48,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
     required this.message,
     required this.contentType,
     this.inMaterialBanner = false,
+    this.showBubbles = true,
   });
 
   @override
@@ -96,7 +98,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
           ),
 
           /// Splash SVG asset
-          Positioned(
+          if(showBubbles)Positioned(
             bottom: 0,
             left: !isRTL ? 0 : null,
             right: isRTL ? 0 : null,
