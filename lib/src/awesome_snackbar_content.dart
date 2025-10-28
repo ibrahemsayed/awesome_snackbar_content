@@ -87,7 +87,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
       margin: EdgeInsets.symmetric(
         horizontal: horizontalPadding,
       ),
-      height: height ?? (isMobile ? 100 : 130),
+      height: height ?? (isMobile ? 108 : 130),
       child: Stack(
         clipBehavior: Clip.none,
         alignment: Alignment.topCenter,
@@ -262,6 +262,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
     ui.BlendMode colorBlendMode,
   ) => color == null ? null : ui.ColorFilter.mode(color, colorBlendMode);
 }
+
 
 
 
