@@ -203,7 +203,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
                       icon: Icon(
                         Icons.close,
                         color: Colors.white,
-                        size: size.height * 0.022,
+                        size: 20,
                       ),
                     ),
                   ],
@@ -262,5 +262,6 @@ class AwesomeSnackbarContent extends StatelessWidget {
     ui.BlendMode colorBlendMode,
   ) => color == null ? null : ui.ColorFilter.mode(color, colorBlendMode);
 }
+
 
 
